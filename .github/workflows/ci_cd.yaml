@@ -12,6 +12,8 @@ jobs:
       fail-fast: false  # Allow all steps to run even if one fails (optional)
     steps:
       - uses: actions/checkout@v3  # Checkout code from the repository
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Set up Python environment
         uses: actions/setup-python@v3
