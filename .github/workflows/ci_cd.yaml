@@ -34,7 +34,7 @@ jobs:
       - name: Pull Ollama mistral model
         run: |
           ollama pull mistral
-
+          
       - name: Run Super-Linter (highly recommended)
         uses: github/super-linter@v4
 
@@ -44,3 +44,7 @@ jobs:
       - name: Build Streamlit app (if applicable)
         run: |
           streamlit run server.py  # Adjust the command if needed
+   lint:
+    steps:
+      - name: Check GITHUB_TOKEN
+        run: echo ${{ secrets.GITHUB_TOKEN }}
